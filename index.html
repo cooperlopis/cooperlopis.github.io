@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cooper Lopis — Electrical Engineering</title>
+<meta name="description" content="Electrical engineering student at the University of Colorado Boulder. RF and analog hardware, FPGA and embedded systems, industrial controls.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="cssMain.css">
+
+<!-- Set before paint so reveal styles only apply when JS is alive. -->
+<script>document.documentElement.classList.add('js');</script>
+
+
+</head>
+<body>
+
+<div id="progress"></div>
+
+<!-- ═══════════════════════════════════════════════════════
+     ICON DEFS
+     ═══════════════════════════════════════════════════════ -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <g id="i-doc"><path d="M4 1.5h5.5L13 5v9.5H4z" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M9.5 1.5V5H13" fill="none" stroke="currentColor" stroke-width="1.3"/></g>
+    <g id="i-github"><path d="M8 1.6a6.4 6.4 0 00-2 12.5c-.3-.1-.3-.6-.3-.8 0-.5 0-1 0-1.3-1.8.4-2.2-.8-2.2-.8-.3-.8-.8-1-.8-1-.6-.4 0-.4 0-.4.7 0 1 .7 1 .7.6 1 1.6.7 2 .5 0-.4.2-.8.4-1-1.4-.2-2.9-.7-2.9-3.2 0-.7.2-1.3.6-1.7-.1-.2-.3-.9.1-1.8 0 0 .6-.2 2 .7a5.6 5.6 0 012.9 0c1.4-.9 2-.7 2-.7.4.9.2 1.6.1 1.8.4.4.6 1 .6 1.7 0 2.5-1.5 3-2.9 3.2.3.3.5.8.5 1.5v1.8c0 .2 0 .7-.4.8A6.4 6.4 0 008 1.6z" fill="currentColor"/></g>
+    <g id="i-linkedin"><path d="M2.6 6.2h2.1V14H2.6zM3.7 2a1.3 1.3 0 100 2.6A1.3 1.3 0 003.7 2zM6.4 6.2h2v1.1c.3-.6 1.1-1.3 2.3-1.3 1.7 0 2.7 1.1 2.7 3.2V14h-2.1V9.6c0-1-.4-1.7-1.3-1.7-.8 0-1.3.5-1.5 1.1V14H6.4z" fill="currentColor"/></g>
+    <g id="i-mail"><rect x="1.8" y="3.5" width="12.4" height="9" rx="1" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M2.2 4.4L8 8.7l5.8-4.3" fill="none" stroke="currentColor" stroke-width="1.3"/></g>
+    <g id="i-arrow"><path d="M2 8h11M9.5 4.5L13 8l-3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.3"/></g>
+    <g id="i-arrow-l"><path d="M14 8H3M6.5 4.5L3 8l3.5 3.5" fill="none" stroke="currentColor" stroke-width="1.3"/></g>
+    <g id="i-download"><path d="M8 2v8M4.5 7L8 10.5 11.5 7M2.5 13.5h11" fill="none" stroke="currentColor" stroke-width="1.3"/></g>
+    <g id="i-wave"><path d="M1 8c1.8 0 1.8-5 3.5-5S6.3 8 8 8s1.8-5 3.5-5S13.2 8 15 8" fill="none" stroke="currentColor" stroke-width="1.3"/></g>
+    <g id="i-chip"><rect x="4" y="4" width="8" height="8" rx="1" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M6.5 1.5v2.5M9.5 1.5v2.5M6.5 12v2.5M9.5 12v2.5M1.5 6.5H4M1.5 9.5H4M12 6.5h2.5M12 9.5h2.5" stroke="currentColor" stroke-width="1.3"/></g>
+    <g id="i-code"><path d="M5.5 4L2 8l3.5 4M10.5 4L14 8l-3.5 4" fill="none" stroke="currentColor" stroke-width="1.3"/></g>
+    <g id="i-term"><rect x="1.5" y="2.5" width="13" height="11" rx="1" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M4.5 6.5L6.5 8l-2 1.5M8.5 10h3.5" stroke="currentColor" stroke-width="1.3" fill="none"/></g>
+    <g id="i-game"><rect x="1.5" y="4.5" width="13" height="7.5" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M4.5 8.25h2M5.5 7.25v2M10 7.75h.01M11.5 9h.01" stroke="currentColor" stroke-width="1.3"/></g>
+    <g id="i-split"><path d="M8 2v12M8 6h4.5M8 10H3.5" fill="none" stroke="currentColor" stroke-width="1.3"/></g>
+    <g id="i-vector"><rect x="2" y="2" width="3" height="3" fill="none" stroke="currentColor" stroke-width="1.3"/><rect x="11" y="11" width="3" height="3" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M5 3.5c5 0 6.5 3 6.5 9" fill="none" stroke="currentColor" stroke-width="1.3"/></g>
+  </defs>
+</svg>
+
+<!-- ═══════════════════════════════════════════════════════
+     HEADER
+     ═══════════════════════════════════════════════════════ -->
+<header class="site-header" id="siteHeader">
+  <div class="wrap header-inner">
+    <a class="wordmark" href="#/">Cooper Lopis</a>
+    <nav class="nav">
+      <a href="#work">Work</a>
+      <a href="#experience">Experience</a>
+      <a href="#skills">Skills</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <!-- TODO: put Cooper_Lopis_Resume.pdf next to index.html -->
+    <a class="btn" href="Cooper_Lopis_Resume.pdf" target="_blank" rel="noopener">
+      Resume
+      <svg width="15" height="15" viewBox="0 0 16 16"><use href="#i-download"/></svg>
+    </a>
+  </div>
+</header>
+
+<!-- ═══════════════════════════════════════════════════════
+     HOME
+     ═══════════════════════════════════════════════════════ -->
+<main class="view is-active" id="view-home">
+
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="mono">Electrical Engineering &middot; University of Colorado Boulder &middot; B.S. 2028</p>
+        <h1>Cooper Lopis</h1>
+        <p class="hero-role">
+          RF and analog hardware, FPGA and embedded systems, and the industrial
+          controls software around them.
+        </p>
+        <p class="bio">
+          Most recently a control process engineer intern at PIM Brands, where I wrote PLC
+          logic and built SCADA screens for production equipment. Outside of coursework I
+          build test instruments and radios, and write the tooling that supports them.
+          Currently looking for a Summer 2027 internship.
+        </p>
+        <div class="hero-actions">
+          <a class="btn" href="Cooper_Lopis_Resume.pdf" target="_blank" rel="noopener">
+            Resume (PDF)
+            <svg width="15" height="15" viewBox="0 0 16 16"><use href="#i-download"/></svg>
+          </a>
+          <a class="btn btn-quiet" href="#work">View work</a>
+        </div>
+        <div class="hero-links">
+          <!-- TODO: real URLs -->
+          <a class="icon-link" href="https://github.com/YOUR-USERNAME" target="_blank" rel="noopener">
+            <svg width="16" height="16" viewBox="0 0 16 16"><use href="#i-github"/></svg> GitHub
+          </a>
+          <a class="icon-link" href="https://linkedin.com/in/YOUR-HANDLE" target="_blank" rel="noopener">
+            <svg width="16" height="16" viewBox="0 0 16 16"><use href="#i-linkedin"/></svg> LinkedIn
+          </a>
+          <a class="icon-link" href="mailto:you@example.com">
+            <svg width="16" height="16" viewBox="0 0 16 16"><use href="#i-mail"/></svg> Email
+          </a>
+        </div>
+      </div>
+
+      <figure class="frame hero-portrait" data-fade>
+        <div class="slot">
+          <span class="ph">images/cooper.jpg</span>
+          <img src="images/cooper.jpg" alt="Cooper Lopis" onerror="this.remove()">
+        </div>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ── WORK ─────────────────────────────────────────── -->
+  <section class="section" id="work">
+    <div class="wrap">
+      <div class="section-head" data-reveal>
+        <h2>Selected work</h2>
+        <span class="mono">2024 &ndash; 2026</span>
+      </div>
+
+      <a class="project" href="#/norcal40a" data-reveal data-fade>
+        <span class="project-icon"><svg width="18" height="18" viewBox="0 0 16 16"><use href="#i-wave"/></svg></span>
+        <div>
+          <h3>NorCal40A CW Transceiver</h3>
+          <p class="mono meta">RF &amp; analog &middot; ~3 months &middot; 13 board modules</p>
+          <p>
+            A 40-meter QRP transceiver built from bare boards, following Rutledge's
+            <em>Electronics of Radio</em>. The receiver and transmitter chains were assembled
+            and characterized separately so each stage had a known-good reference to test
+            against. Passed the FCC Technician exam during the build.
+          </p>
+          <ul class="tags"><li>RF design</li><li>Analog</li><li>Soldering</li><li>Test &amp; measurement</li></ul>
+          <span class="more">Read more <svg width="15" height="15" viewBox="0 0 16 16"><use href="#i-arrow"/></svg></span>
+        </div>
+        <figure class="frame">
+          <div class="slot">
+            <span class="ph">images/hamBuild.png</span>
+            <img src="images/hamBuild.png" alt="Completed NorCal40A transceiver" onerror="this.remove()">
+          </div>
+        </figure>
+      </a>
+
+      <a class="project" href="#/voltmeter" data-reveal data-fade>
+        <span class="project-icon"><svg width="18" height="18" viewBox="0 0 16 16"><use href="#i-chip"/></svg></span>
+        <div>
+          <h3>FPGA-Driven Digital Voltmeter</h3>
+          <p class="mono meta">Digital &amp; embedded &middot; Verilog</p>
+          <p>
+            A bench voltmeter where sampling, timing, and display driving are implemented in
+            HDL rather than firmware. An Arduino handles the analog front end and ADC
+            handshake; the FPGA owns everything that needs a deterministic clock edge.
+          </p>
+          <ul class="tags"><li>Verilog</li><li>FPGA</li><li>ADC interfacing</li><li>Embedded C</li></ul>
+          <span class="more">Read more <svg width="15" height="15" viewBox="0 0 16 16"><use href="#i-arrow"/></svg></span>
+        </div>
+        <figure class="frame">
+          <div class="slot">
+            <span class="ph">images/voltmeter.png</span>
+            <img src="images/voltmeter.png" alt="FPGA voltmeter prototype" onerror="this.remove()">
+          </div>
+        </figure>
+      </a>
+
+      <a class="project" href="#/circuit-solver" data-reveal data-fade>
+        <span class="project-icon"><svg width="18" height="18" viewBox="0 0 16 16"><use href="#i-code"/></svg></span>
+        <div>
+          <h3>Circuit Solver</h3>
+          <p class="mono meta">Web tool &middot; JavaScript &middot; In progress</p>
+          <p>
+            A tool for circuits students that takes a netlist, runs the nodal analysis, and
+            shows the intermediate steps rather than only the result &mdash; which is the part
+            you need when your answer disagrees with the textbook.
+          </p>
+          <ul class="tags"><li>JavaScript</li><li>Linear algebra</li><li>Nodal analysis</li><li>UI</li></ul>
+          <span class="more">Read more <svg width="15" height="15" viewBox="0 0 16 16"><use href="#i-arrow"/></svg></span>
+        </div>
+        <figure class="frame">
+          <div class="slot">
+            <span class="ph">images/circuitSolver.png</span>
+            <img src="images/circuitSolver.png" alt="Circuit solver interface" onerror="this.remove()">
+          </div>
+        </figure>
+      </a>
+
+      <a class="project" href="#/scout" data-reveal data-fade>
+        <span class="project-icon"><svg width="18" height="18" viewBox="0 0 16 16"><use href="#i-term"/></svg></span>
+        <div>
+          <h3>Internship Scout</h3>
+          <p class="mono meta">Automation &middot; Python &middot; Runs daily</p>
+          <p>
+            A Python tool that pulls postings from several job boards, normalizes them into a
+            single record shape so cross-board duplicates collapse, and scores each one
+            against my coursework and past roles to produce a ranked shortlist.
+          </p>
+          <ul class="tags"><li>Python</li><li>Scraping</li><li>Data normalization</li><li>Scheduling</li></ul>
+          <span class="more">Read more <svg width="15" height="15" viewBox="0 0 16 16"><use href="#i-arrow"/></svg></span>
+        </div>
+        <figure class="frame">
+          <div class="slot">
+            <span class="ph">images/scout.png</span>
+            <img src="images/scout.png" alt="Internship scout output" onerror="this.remove()">
+          </div>
+        </figure>
+      </a>
+
+      <div class="minor stagger" data-reveal>
+        <div>
+          <svg width="17" height="17" viewBox="0 0 16 16"><use href="#i-game"/></svg>
+          <h4>Unity 2D Platformer</h4>
+          <p>C# movement and state machines, hand-tuned game feel.</p>
+        </div>
+        <div>
+          <svg width="17" height="17" viewBox="0 0 16 16"><use href="#i-split"/></svg>
+          <h4>TabLoop</h4>
+          <p>Mobile app for splitting shared group expenses.</p>
+        </div>
+        <div>
+          <svg width="17" height="17" viewBox="0 0 16 16"><use href="#i-vector"/></svg>
+          <h4>SVG Diagram Tool</h4>
+          <p>Pure-Python desktop app for generating industrial schematics.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── EXPERIENCE ───────────────────────────────────── -->
+  <section class="section" id="experience">
+    <div class="wrap">
+      <div class="section-head" data-reveal>
+        <h2>Experience</h2>
+        <span class="mono">Full history on the resume</span>
+      </div>
+
+      <div class="role" data-reveal>
+        <span class="mono">Summer 2025</span><!-- TODO: confirm dates -->
+        <div>
+          <h3>Control Process Engineer Intern <span class="org">&mdash; PIM Brands</span></h3>
+          <p>
+            Wrote and debugged PLC logic on production equipment, designed operator SCADA
+            screens in Ignition, and built SQL queries against the plant historian so downtime
+            could be attributed to a specific machine and shift.
+          </p>
+        </div>
+      </div>
+
+      <div class="role" data-reveal>
+        <span class="mono">TODO: dates</span>
+        <div>
+          <h3>Engineering &amp; Facilities Intern <span class="org">&mdash; Town Square</span></h3>
+          <p>TODO &mdash; one or two sentences on what you owned and what changed as a result.</p>
+        </div>
+      </div>
+
+      <div class="role" data-reveal>
+        <span class="mono">TODO: dates</span>
+        <div>
+          <h3>TODO: role <span class="org">&mdash; Visiting Angels</span></h3>
+          <p>TODO &mdash; short description.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── SKILLS ───────────────────────────────────────── -->
+  <section class="section" id="skills">
+    <div class="wrap">
+      <div class="section-head" data-reveal><h2>Skills</h2></div>
+      <div class="skill-grid stagger" data-reveal>
+        <div>
+          <span class="mono">Hardware</span>
+          <ul>
+            <li>Analog &amp; RF circuit design</li>
+            <li>Verilog / FPGA</li>
+            <li>PCB assembly &amp; rework</li>
+            <li>Arduino / embedded C</li>
+          </ul>
+        </div>
+        <div>
+          <span class="mono">Controls</span>
+          <ul>
+            <li>PLC ladder logic</li>
+            <li>Ignition SCADA</li>
+            <li>SQL / historian data</li>
+            <li>P&amp;ID reading</li>
+          </ul>
+        </div>
+        <div>
+          <span class="mono">Software</span>
+          <ul>
+            <li>Python</li>
+            <li>JavaScript / HTML / CSS</li>
+            <li>C# and Unity</li>
+            <li>Git</li>
+          </ul>
+        </div>
+        <div>
+          <span class="mono">Instruments</span>
+          <ul>
+            <li>Oscilloscope</li>
+            <li>Spectrum analyzer</li>
+            <li>Function generator</li>
+            <li>DMM / bench supply</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── CONTACT ──────────────────────────────────────── -->
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <span class="mono">Contact</span>
+      <h2>Open to Summer 2027 internships</h2>
+      <p class="lede">
+        Based in Boulder, Colorado. Happy to talk about hardware, controls, or anything on
+        this page.
+      </p>
+      <div class="contact-rows">
+        <!-- TODO: real email + URLs -->
+        <a href="mailto:you@example.com">
+          <svg width="16" height="16" viewBox="0 0 16 16"><use href="#i-mail"/></svg> you@example.com
+        </a>
+        <a href="Cooper_Lopis_Resume.pdf" target="_blank" rel="noopener">
+          <svg width="16" height="16" viewBox="0 0 16 16"><use href="#i-doc"/></svg> Resume (PDF)
+        </a>
+        <a href="https://github.com/YOUR-USERNAME" target="_blank" rel="noopener">
+          <svg width="16" height="16" viewBox="0 0 16 16"><use href="#i-github"/></svg> GitHub
+        </a>
+        <a href="https://linkedin.com/in/YOUR-HANDLE" target="_blank" rel="noopener">
+          <svg width="16" height="16" viewBox="0 0 16 16"><use href="#i-linkedin"/></svg> LinkedIn
+        </a>
+      </div>
+      <div class="colophon">
+        <span class="mono">Cooper Lopis &middot; Boulder, Colorado</span>
+        <span class="mono">&copy; 2026</span>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ═══════════════════════════════════════════════════════
+     DETAIL — NORCAL40A
+     ═══════════════════════════════════════════════════════ -->
+<main class="view" id="view-norcal40a">
+  <div class="wrap detail-head">
+    <a class="back" href="#/"><svg width="15" height="15" viewBox="0 0 16 16"><use href="#i-arrow-l"/></svg> All work</a>
+    <h1>NorCal40A CW Transceiver</h1>
+    <div class="detail-sub">
+      <span class="mono">RF &amp; analog</span>
+      <span class="mono">~3 months</span>
+      <span class="mono">13 board modules</span>
+      <span class="mono">40 m &middot; 7 MHz</span>
+    </div>
+  </div>
+
+  <div class="wrap detail-body">
+    <div class="prose">
+      <figure class="frame wide" data-fade>
+        <div class="slot">
+          <span class="ph">images/hamBuild.png</span>
+          <img src="images/hamBuild.png" alt="Completed NorCal40A transceiver" onerror="this.remove()">
+        </div>
+        <figcaption>Finished radio</figcaption>
+      </figure>
+
+      <h2>Overview</h2>
+      <p>
+        The NorCal40A is a 40-meter QRP CW transceiver. I built mine alongside David
+        Rutledge's <em>Electronics of Radio</em>, which structures the project as thirteen
+        separate modules &mdash; mixer, VFO, IF amplifier, product detector, transmit chain
+        &mdash; each with its own theory section and its own set of measurements before moving
+        on.
+      </p>
+      <p>
+        Total build time was roughly three months. Rather than populating the whole board at
+        once, I brought up the receiver chain and transmitter chain separately so that at
+        every stage there was a known-good signal path to test against. When something
+        didn't work, the fault was contained to one module.
+      </p>
+
+      <h2>Approach</h2>
+      <ul>
+        <li>Read the schematic as a set of stages with defined inputs and outputs rather than one net.</li>
+        <li>Verified VFO frequency and checked transmit harmonics on a spectrum analyzer.</li>
+        <li>Wound toroids to spec and measured the effect of turn spacing on inductance.</li>
+        <li>Debugged by bisection: inject at the midpoint, determine which half fails, repeat.</li>
+      </ul>
+
+      <h2>Licensing</h2>
+      <p>
+        With the build nearly complete I studied for and passed the FCC Technician class exam,
+        which I currently hold. Most of the RF theory on the exam covered material I had
+        already had to measure directly.
+      </p>
+
+      <div class="gallery">
+        <figure class="frame" data-fade>
+          <div class="slot"><span class="ph">images/ham-1.png</span><img src="images/ham-1.png" alt="Board detail" onerror="this.remove()"></div>
+          <figcaption>Board detail</figcaption>
+        </figure>
+        <figure class="frame" data-fade>
+          <div class="slot"><span class="ph">images/ham-2.png</span><img src="images/ham-2.png" alt="Bench setup" onerror="this.remove()"></div>
+          <figcaption>Bench test setup</figcaption>
+        </figure>
+        <figure class="frame" data-fade>
+          <div class="slot"><span class="ph">images/ham-3.png</span><img src="images/ham-3.png" alt="Measured output" onerror="this.remove()"></div>
+          <figcaption>Measured output</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <aside class="sidebar">
+      <dl class="spec">
+        <dt class="mono">Skills</dt>
+        <dd>RF design<br>Analog troubleshooting<br>Through-hole soldering<br>Toroid winding<br>Test &amp; measurement</dd>
+      </dl>
+      <dl class="spec">
+        <dt class="mono">Instruments</dt>
+        <dd>Oscilloscope<br>Spectrum analyzer<br>Function generator<br>Dummy load</dd>
+      </dl>
+      <dl class="spec">
+        <dt class="mono">Reference</dt>
+        <dd>Rutledge,<br><em>Electronics of Radio</em></dd>
+      </dl>
+      <a class="btn btn-quiet" href="https://github.com/YOUR-USERNAME" target="_blank" rel="noopener">Project notes</a>
+    </aside>
+  </div>
+
+  <div class="wrap">
+    <a class="next" href="#/voltmeter">
+      <div><span class="mono">Next project</span><h3>FPGA-Driven Digital Voltmeter</h3></div>
+      <svg width="34" height="16" viewBox="0 0 16 16"><use href="#i-arrow"/></svg>
+    </a>
+  </div>
+</main>
+
+<!-- ═══════════════════════════════════════════════════════
+     DETAIL — VOLTMETER
+     ═══════════════════════════════════════════════════════ -->
+<main class="view" id="view-voltmeter">
+  <div class="wrap detail-head">
+    <a class="back" href="#/"><svg width="15" height="15" viewBox="0 0 16 16"><use href="#i-arrow-l"/></svg> All work</a>
+    <h1>FPGA-Driven Digital Voltmeter</h1>
+    <div class="detail-sub">
+      <span class="mono">Digital &amp; embedded</span>
+      <span class="mono">Verilog</span>
+      <span class="mono">TODO: duration</span>
+    </div>
+  </div>
+
+  <div class="wrap detail-body">
+    <div class="prose">
+      <figure class="frame wide" data-fade>
+        <div class="slot"><span class="ph">images/voltmeter.png</span><img src="images/voltmeter.png" alt="FPGA voltmeter" onerror="this.remove()"></div>
+        <figcaption>Prototype</figcaption>
+      </figure>
+
+      <h2>Overview</h2>
+      <p>
+        A bench voltmeter where the measurement path lives in hardware. An Arduino handles the
+        analog front end and the ADC handshake; the FPGA owns sampling timing, averaging,
+        binary-to-BCD conversion, and the multiplexed display driver.
+      </p>
+
+      <h2>Why an FPGA</h2>
+      <p>
+        A microcontroller can do this, but its timing depends on whatever else the main loop is
+        doing. Moving the measurement into fabric fixed the sample interval to a counter rather
+        than a code path, and kept display refresh from competing with conversion for cycles.
+      </p>
+
+      <h2>Design notes</h2>
+      <ul>
+        <li>TODO &mdash; clock divider and the sample rate you settled on.</li>
+        <li>TODO &mdash; binary-to-BCD method (double dabble?) and digit multiplexing.</li>
+        <li>TODO &mdash; calibration: correcting offset and gain against a known reference.</li>
+        <li>TODO &mdash; measured accuracy and input range.</li>
+      </ul>
+
+      <h2>What I would change</h2>
+      <p>
+        TODO &mdash; one honest paragraph. This gets asked in interviews more than any feature list.
+      </p>
+
+      <div class="gallery">
+        <figure class="frame" data-fade>
+          <div class="slot"><span class="ph">images/volt-1.png</span><img src="images/volt-1.png" alt="Wiring detail" onerror="this.remove()"></div>
+          <figcaption>Wiring detail</figcaption>
+        </figure>
+        <figure class="frame" data-fade>
+          <div class="slot"><span class="ph">images/volt-2.png</span><img src="images/volt-2.png" alt="Block diagram" onerror="this.remove()"></div>
+          <figcaption>Block diagram</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <aside class="sidebar">
+      <dl class="spec">
+        <dt class="mono">Skills</dt>
+        <dd>Verilog<br>Digital design<br>ADC interfacing<br>Embedded C<br>Timing analysis</dd>
+      </dl>
+      <dl class="spec">
+        <dt class="mono">Hardware</dt>
+        <dd>TODO: FPGA board<br>Arduino Uno<br>TODO: ADC part no.<br>7-segment display</dd>
+      </dl>
+      <a class="btn btn-quiet" href="https://github.com/YOUR-USERNAME" target="_blank" rel="noopener">Source on GitHub</a>
+    </aside>
+  </div>
+
+  <div class="wrap">
+    <a class="next" href="#/circuit-solver">
+      <div><span class="mono">Next project</span><h3>Circuit Solver</h3></div>
+      <svg width="34" height="16" viewBox="0 0 16 16"><use href="#i-arrow"/></svg>
+    </a>
+  </div>
+</main>
+
+<!-- ═══════════════════════════════════════════════════════
+     DETAIL — CIRCUIT SOLVER
+     ═══════════════════════════════════════════════════════ -->
+<main class="view" id="view-circuit-solver">
+  <div class="wrap detail-head">
+    <a class="back" href="#/"><svg width="15" height="15" viewBox="0 0 16 16"><use href="#i-arrow-l"/></svg> All work</a>
+    <h1>Circuit Solver</h1>
+    <div class="detail-sub">
+      <span class="mono">Web tool</span>
+      <span class="mono">JavaScript</span>
+      <span class="mono">In progress</span>
+    </div>
+  </div>
+
+  <div class="wrap detail-body">
+    <div class="prose">
+      <figure class="frame wide" data-fade>
+        <div class="slot"><span class="ph">images/circuitSolver.png</span><img src="images/circuitSolver.png" alt="Circuit solver" onerror="this.remove()"></div>
+        <figcaption>Solver interface</figcaption>
+      </figure>
+
+      <h2>Problem</h2>
+      <p>
+        Checking a circuits homework answer usually means working the whole problem again.
+        Existing simulators return a number but not the path to it, which is what you need
+        when your result disagrees with the book.
+      </p>
+
+      <h2>How it works</h2>
+      <ul>
+        <li>Parse the circuit into a node and branch structure.</li>
+        <li>Build the conductance matrix and source vector for nodal analysis.</li>
+        <li>Solve, then present the derivation as readable steps rather than a single result.</li>
+        <li>TODO &mdash; which element types are supported so far.</li>
+      </ul>
+
+      <h2>Status</h2>
+      <p>
+        TODO &mdash; what works today, what's next, and whether it's deployed anywhere someone
+        could try it. A live link here is worth more than a screenshot.
+      </p>
+
+      <div class="gallery">
+        <figure class="frame" data-fade>
+          <div class="slot"><span class="ph">images/solver-1.png</span><img src="images/solver-1.png" alt="Step output" onerror="this.remove()"></div>
+          <figcaption>Step output</figcaption>
+        </figure>
+        <figure class="frame" data-fade>
+          <div class="slot"><span class="ph">images/solver-2.png</span><img src="images/solver-2.png" alt="Netlist input" onerror="this.remove()"></div>
+          <figcaption>Netlist input</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <aside class="sidebar">
+      <dl class="spec">
+        <dt class="mono">Skills</dt>
+        <dd>JavaScript<br>Linear algebra<br>Nodal analysis<br>UI design</dd>
+      </dl>
+      <dl class="spec">
+        <dt class="mono">Links</dt>
+        <dd>TODO: live demo<br>TODO: repo</dd>
+      </dl>
+      <a class="btn btn-quiet" href="https://github.com/YOUR-USERNAME" target="_blank" rel="noopener">Source on GitHub</a>
+    </aside>
+  </div>
+
+  <div class="wrap">
+    <a class="next" href="#/scout">
+      <div><span class="mono">Next project</span><h3>Internship Scout</h3></div>
+      <svg width="34" height="16" viewBox="0 0 16 16"><use href="#i-arrow"/></svg>
+    </a>
+  </div>
+</main>
+
+<!-- ═══════════════════════════════════════════════════════
+     DETAIL — SCOUT
+     ═══════════════════════════════════════════════════════ -->
+<main class="view" id="view-scout">
+  <div class="wrap detail-head">
+    <a class="back" href="#/"><svg width="15" height="15" viewBox="0 0 16 16"><use href="#i-arrow-l"/></svg> All work</a>
+    <h1>Internship Scout</h1>
+    <div class="detail-sub">
+      <span class="mono">Automation</span>
+      <span class="mono">Python</span>
+      <span class="mono">Runs daily</span>
+    </div>
+  </div>
+
+  <div class="wrap detail-body">
+    <div class="prose">
+      <figure class="frame wide" data-fade>
+        <div class="slot"><span class="ph">images/scout.png</span><img src="images/scout.png" alt="Scout output" onerror="this.remove()"></div>
+        <figcaption>Ranked output</figcaption>
+      </figure>
+
+      <h2>Overview</h2>
+      <p>
+        A Python tool that replaces the daily pass through the same four job boards. It runs on
+        a schedule and produces a ranked shortlist, so the only manual step left is deciding
+        whether to apply.
+      </p>
+
+      <h2>Pipeline</h2>
+      <ul>
+        <li>Pull postings from several sources on a schedule.</li>
+        <li>Normalize into one record shape so duplicates across boards collapse.</li>
+        <li>Score each posting against coursework, tools, and past roles.</li>
+        <li>Output the ranked list to a file I check each morning.</li>
+      </ul>
+
+      <h2>Scoring</h2>
+      <p>
+        TODO &mdash; write up the heuristic: how title, description, and required years are
+        weighted, and what you changed after it kept surfacing senior roles. That is the part
+        worth showing.
+      </p>
+
+      <div class="gallery">
+        <figure class="frame" data-fade>
+          <div class="slot"><span class="ph">images/scout-1.png</span><img src="images/scout-1.png" alt="Scoring breakdown" onerror="this.remove()"></div>
+          <figcaption>Scoring breakdown</figcaption>
+        </figure>
+        <figure class="frame" data-fade>
+          <div class="slot"><span class="ph">images/scout-2.png</span><img src="images/scout-2.png" alt="Pipeline" onerror="this.remove()"></div>
+          <figcaption>Pipeline</figcaption>
+        </figure>
+      </div>
+    </div>
+
+    <aside class="sidebar">
+      <dl class="spec">
+        <dt class="mono">Skills</dt>
+        <dd>Python<br>Web scraping<br>Data normalization<br>Scheduling</dd>
+      </dl>
+      <dl class="spec">
+        <dt class="mono">Stack</dt>
+        <dd>TODO: libraries used</dd>
+      </dl>
+      <a class="btn btn-quiet" href="https://github.com/YOUR-USERNAME" target="_blank" rel="noopener">Source on GitHub</a>
+    </aside>
+  </div>
+
+  <div class="wrap">
+    <a class="next" href="#/norcal40a">
+      <div><span class="mono">Back to first project</span><h3>NorCal40A CW Transceiver</h3></div>
+      <svg width="34" height="16" viewBox="0 0 16 16"><use href="#i-arrow"/></svg>
+    </a>
+  </div>
+</main>
+
+<script src="mainJS.js"></script>
+
+</body>
+</html>
