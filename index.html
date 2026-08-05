@@ -34,8 +34,7 @@
     <g id="i-download"><path d="M8 2v8M4.5 7L8 10.5 11.5 7M2.5 13.5h11" fill="none" stroke="currentColor" stroke-width="1.3"/></g>
     <g id="i-wave"><path d="M1 8c1.8 0 1.8-5 3.5-5S6.3 8 8 8s1.8-5 3.5-5S13.2 8 15 8" fill="none" stroke="currentColor" stroke-width="1.3"/></g>
     <g id="i-chip"><rect x="4" y="4" width="8" height="8" rx="1" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M6.5 1.5v2.5M9.5 1.5v2.5M6.5 12v2.5M9.5 12v2.5M1.5 6.5H4M1.5 9.5H4M12 6.5h2.5M12 9.5h2.5" stroke="currentColor" stroke-width="1.3"/></g>
-    <g id="i-code"><path d="M5.5 4L2 8l3.5 4M10.5 4L14 8l-3.5 4" fill="none" stroke="currentColor" stroke-width="1.3"/></g>
-    <g id="i-term"><rect x="1.5" y="2.5" width="13" height="11" rx="1" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M4.5 6.5L6.5 8l-2 1.5M8.5 10h3.5" stroke="currentColor" stroke-width="1.3" fill="none"/></g>
+    <g id="i-solar"><path d="M8 1.5v2M3.4 3.4l1.4 1.4M1.5 8h2M12.6 3.4l-1.4 1.4M14.5 8h-2" stroke="currentColor" stroke-width="1.3" fill="none"/><path d="M4 9h8l1.5 5h-11z" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M7.6 9v5M4.6 11.5h6.8" stroke="currentColor" stroke-width="1.1"/></g>
     <g id="i-game"><rect x="1.5" y="4.5" width="13" height="7.5" rx="2.5" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M4.5 8.25h2M5.5 7.25v2M10 7.75h.01M11.5 9h.01" stroke="currentColor" stroke-width="1.3"/></g>
     <g id="i-split"><path d="M8 2v12M8 6h4.5M8 10H3.5" fill="none" stroke="currentColor" stroke-width="1.3"/></g>
     <g id="i-vector"><rect x="2" y="2" width="3" height="3" fill="none" stroke="currentColor" stroke-width="1.3"/><rect x="11" y="11" width="3" height="3" fill="none" stroke="currentColor" stroke-width="1.3"/><path d="M5 3.5c5 0 6.5 3 6.5 9" fill="none" stroke="currentColor" stroke-width="1.3"/></g>
@@ -81,7 +80,7 @@
           Currently looking for a Summer 2027 internship.
         </p>
         <div class="hero-actions">
-          <a class="btn" href="Cooper_Lopis_Resume.pdf" target="_blank" rel="noopener">
+          <a class="btn" href="CL_Resume.pdf" target="_blank" rel="noopener">
             Resume (PDF)
             <svg width="15" height="15" viewBox="0 0 16 16"><use href="#i-download"/></svg>
           </a>
@@ -134,8 +133,8 @@
         </div>
         <figure class="frame">
           <div class="slot">
-            <span class="ph">images/hamBuild.png</span>
-            <img src="images/hamBuild.png" alt="Completed NorCal40A transceiver" onerror="this.remove()">
+            <span class="ph">images/radioBuild.png</span>
+            <img src="images/radioBuild.png" alt="Completed NorCal40A transceiver" onerror="this.remove()">
           </div>
         </figure>
       </a>
@@ -146,65 +145,42 @@
           <h3>FPGA-Driven Digital Voltmeter</h3>
           <p class="mono meta">Digital &amp; embedded &middot; Verilog</p>
           <p>
-            A bench voltmeter where sampling, timing, and display driving are implemented in
-            HDL rather than firmware. An Arduino handles the analog front end and ADC
-            handshake; the FPGA owns everything that needs a deterministic clock edge.
+            A voltmeter where timing and display driving are implemented in
+            HDL rather than firmware. An Arduino handles the analog front end; the FPGA owns everything that needs a deterministic clock edge.
           </p>
           <ul class="tags"><li>Verilog</li><li>FPGA</li><li>ADC interfacing</li><li>Embedded C</li></ul>
           <span class="more">Read more <svg width="15" height="15" viewBox="0 0 16 16"><use href="#i-arrow"/></svg></span>
         </div>
         <figure class="frame">
           <div class="slot">
-            <span class="ph">images/voltmeter.png</span>
-            <img src="images/voltmeter.png" alt="FPGA voltmeter prototype" onerror="this.remove()">
+            <span class="ph">images/volt-2.jpg</span>
+            <img src="images/volt-2.jpg" alt="FPGA voltmeter prototype" onerror="this.remove()">
           </div>
         </figure>
       </a>
 
-      <a class="project" href="#/circuit-solver" data-reveal data-fade>
-        <span class="project-icon"><svg width="18" height="18" viewBox="0 0 16 16"><use href="#i-code"/></svg></span>
+      <a class="project" href="#/pv-battery" data-reveal data-fade>
+        <span class="project-icon"><svg width="18" height="18" viewBox="0 0 16 16"><use href="#i-solar"/></svg></span>
         <div>
-          <h3>Circuit Solver</h3>
-          <p class="mono meta">Web tool &middot; JavaScript &middot; In progress</p>
+          <h3>Residential PV + Battery System</h3>
+          <p class="mono meta">Energy systems &middot; MATLAB &middot; Team of 5</p>
           <p>
-            A tool for circuits students that takes a netlist, runs the nodal analysis, and
-            shows the intermediate steps rather than only the result &mdash; which is the part
-            you need when your answer disagrees with the textbook.
+            A 2.4 kW rooftop array and battery sized for a Tucson home, simulated across a
+            full year. I owned the electricity pricing and evaluation model &mdash; the tariff
+            structures and the cost baselines that turned a battery schedule into a weekly
+            bill. Adding storage cut the summer bill from $39.71 to $14.94 a week.
           </p>
-          <ul class="tags"><li>JavaScript</li><li>Linear algebra</li><li>Nodal analysis</li><li>UI</li></ul>
+          <ul class="tags"><li>MATLAB</li><li>Energy modeling</li><li>Forecasting</li><li>Cost analysis</li></ul>
           <span class="more">Read more <svg width="15" height="15" viewBox="0 0 16 16"><use href="#i-arrow"/></svg></span>
         </div>
         <figure class="frame">
           <div class="slot">
-            <span class="ph">images/circuitSolver.png</span>
-            <img src="images/circuitSolver.png" alt="Circuit solver interface" onerror="this.remove()">
+            <span class="ph">images/pv-cost.png</span>
+            <img src="images/pv-cost.png" alt="Weekly electricity cost comparison" onerror="this.remove()">
           </div>
         </figure>
       </a>
 
-      <a class="project" href="#/scout" data-reveal data-fade>
-        <span class="project-icon"><svg width="18" height="18" viewBox="0 0 16 16"><use href="#i-term"/></svg></span>
-        <div>
-          <h3>Internship Scout</h3>
-          <p class="mono meta">Automation &middot; Python &middot; Runs daily</p>
-          <p>
-            A Python tool that pulls postings from several job boards, normalizes them into a
-            single record shape so cross-board duplicates collapse, and scores each one
-            against my coursework and past roles to produce a ranked shortlist.
-          </p>
-          <ul class="tags"><li>Python</li><li>Scraping</li><li>Data normalization</li><li>Scheduling</li></ul>
-          <span class="more">Read more <svg width="15" height="15" viewBox="0 0 16 16"><use href="#i-arrow"/></svg></span>
-        </div>
-        <figure class="frame">
-          <div class="slot">
-            <span class="ph">images/scout.png</span>
-            <img src="images/scout.png" alt="Internship scout output" onerror="this.remove()">
-          </div>
-        </figure>
-      </a>
-
-
-      </div>
     </div>
   </section>
 
@@ -230,7 +206,7 @@
         <span class="mono">Summer 2025</span>
         <div>
           <h3>Engineering &amp; Facilities Intern <span class="org">&mdash; Town Square</span></h3>
-          <p> &mdash; Assisted in the engineering and buildout of a 10,000 sq. c. facility, collaboraUng with licensed engineers and
+          <p> &mdash; Assisted in the engineering and buildout of a 10,000 sq. c. facility, collaborating with licensed engineers and
             electricians.</p>
         </div>
       </div>
@@ -274,6 +250,7 @@
             <li>Python</li>
             <li> HTML / CSS / JavaScript</li>
             <li>C# and Unity</li>
+            <li>MATLAB</li>
             <li>Git</li>
           </ul>
         </div>
@@ -304,7 +281,7 @@
         <a href="mailto:cooperlopis7@gmail.com">
           <svg width="16" height="16" viewBox="0 0 16 16"><use href="#i-mail"/></svg> cooperlopis7@gmail.com
         </a>
-        <a href="Cooper_Lopis_Resume.pdf" target="_blank" rel="noopener">
+        <a href="CL_Resume.pdf" target="_blank" rel="noopener">
           <svg width="16" height="16" viewBox="0 0 16 16"><use href="#i-doc"/></svg> Resume (PDF)
         </a>
         <a href="https://github.com/cooperlopis" target="_blank" rel="noopener">
@@ -341,8 +318,8 @@
     <div class="prose">
       <figure class="frame wide" data-fade>
         <div class="slot">
-          <span class="ph">images/hamBuild.png</span>
-          <img src="images/hamBuild.png" alt="Completed NorCal40A transceiver" onerror="this.remove()">
+          <span class="ph">images/radioBuild.png</span>
+          <img src="images/radioBuild.png" alt="Completed NorCal40A transceiver" onerror="this.remove()">
         </div>
         <figcaption>Finished radio</figcaption>
       </figure>
@@ -428,52 +405,31 @@
     <div class="detail-sub">
       <span class="mono">Digital &amp; embedded</span>
       <span class="mono">Verilog</span>
-      <span class="mono">TODO: duration</span>
     </div>
   </div>
 
   <div class="wrap detail-body">
     <div class="prose">
       <figure class="frame wide" data-fade>
-        <div class="slot"><span class="ph">images/voltmeter.png</span><img src="images/voltmeter.png" alt="FPGA voltmeter" onerror="this.remove()"></div>
+        <div class="slot"><span class="ph">images/volt-2.jpg</span><img src="images/volt-2.jpg" alt="FPGA voltmeter" onerror="this.remove()"></div>
         <figcaption>Prototype</figcaption>
       </figure>
 
       <h2>Overview</h2>
       <p>
-        A bench voltmeter where the measurement path lives in hardware. An Arduino handles the
-        analog front end and the ADC handshake; the FPGA owns sampling timing, averaging,
+        A voltmeter where the measurement path lives in hardware. An Arduino handles the
+        analog front end; the FPGA owns timing, averaging,
         binary-to-BCD conversion, and the multiplexed display driver.
-      </p>
-
-      <h2>Why an FPGA</h2>
-      <p>
-        A microcontroller can do this, but its timing depends on whatever else the main loop is
-        doing. Moving the measurement into fabric fixed the sample interval to a counter rather
-        than a code path, and kept display refresh from competing with conversion for cycles.
-      </p>
-
-      <h2>Design notes</h2>
-      <ul>
-        <li>TODO &mdash; clock divider and the sample rate you settled on.</li>
-        <li>TODO &mdash; binary-to-BCD method (double dabble?) and digit multiplexing.</li>
-        <li>TODO &mdash; calibration: correcting offset and gain against a known reference.</li>
-        <li>TODO &mdash; measured accuracy and input range.</li>
-      </ul>
-
-      <h2>What I would change</h2>
-      <p>
-        TODO &mdash; one honest paragraph. This gets asked in interviews more than any feature list.
       </p>
 
       <div class="gallery">
         <figure class="frame" data-fade>
-          <div class="slot"><span class="ph">images/volt-1.png</span><img src="images/volt-1.png" alt="Wiring detail" onerror="this.remove()"></div>
-          <figcaption>Wiring detail</figcaption>
+          <div class="slot"><span class="ph">images/voltmeter.jpg</span><img src="images/voltmeter.jpg" alt="Board and display" onerror="this.remove()"></div>
+          <figcaption>Board and display</figcaption>
         </figure>
         <figure class="frame" data-fade>
-          <div class="slot"><span class="ph">images/volt-2.png</span><img src="images/volt-2.png" alt="Block diagram" onerror="this.remove()"></div>
-          <figcaption>Block diagram</figcaption>
+          <div class="slot"><span class="ph">images/volt-1.jpg</span><img src="images/volt-1.jpg" alt="Full bench setup" onerror="this.remove()"></div>
+          <figcaption>Full bench setup</figcaption>
         </figure>
       </div>
     </div>
@@ -485,158 +441,137 @@
       </dl>
       <dl class="spec">
         <dt class="mono">Hardware</dt>
-        <dd>TODO: FPGA board<br>Arduino Uno<br>TODO: ADC part no.<br>7-segment display</dd>
+        <dd>Basys 3 (Artix-7)<br>Arduino Uno<br>7-segment display</dd>
       </dl>
       <a class="btn btn-quiet" href="https://github.com/cooperlopis" target="_blank" rel="noopener">Source on GitHub</a>
     </aside>
   </div>
 
   <div class="wrap">
-    <a class="next" href="#/circuit-solver">
-      <div><span class="mono">Next project</span><h3>Circuit Solver</h3></div>
+    <a class="next" href="#/pv-battery">
+      <div><span class="mono">Next project</span><h3>Residential PV + Battery System</h3></div>
       <svg width="34" height="16" viewBox="0 0 16 16"><use href="#i-arrow"/></svg>
     </a>
   </div>
 </main>
 
 <!-- ═══════════════════════════════════════════════════════
-     DETAIL — CIRCUIT SOLVER
+     DETAIL — PV + BATTERY
      ═══════════════════════════════════════════════════════ -->
-<main class="view" id="view-circuit-solver">
+<main class="view" id="view-pv-battery">
   <div class="wrap detail-head">
     <a class="back" href="#/"><svg width="15" height="15" viewBox="0 0 16 16"><use href="#i-arrow-l"/></svg> All work</a>
-    <h1>Circuit Solver</h1>
+    <h1>Residential PV + Battery System</h1>
     <div class="detail-sub">
-      <span class="mono">Web tool</span>
-      <span class="mono">JavaScript</span>
-      <span class="mono">In progress</span>
+      <span class="mono">Energy systems</span>
+      <span class="mono">MATLAB</span>
+      <span class="mono">ECEN 2410 &middot; Spring 2026</span>
+      <span class="mono">Team of 5</span>
     </div>
   </div>
 
   <div class="wrap detail-body">
     <div class="prose">
       <figure class="frame wide" data-fade>
-        <div class="slot"><span class="ph">images/circuitSolver.png</span><img src="images/circuitSolver.png" alt="Circuit solver" onerror="this.remove()"></div>
-        <figcaption>Solver interface</figcaption>
+        <div class="slot"><span class="ph">images/pv-cost.png</span><img src="images/pv-cost.png" alt="Weekly electricity cost by configuration and tariff" onerror="this.remove()"></div>
+        <figcaption>Weekly cost by configuration and tariff scheme</figcaption>
       </figure>
 
-      <h2>Problem</h2>
+      <h2>The system</h2>
       <p>
-        Checking a circuits homework answer usually means working the whole problem again.
-        Existing simulators return a number but not the path to it, which is what you need
-        when your result disagrees with the book.
+        A rooftop photovoltaic array with battery storage, sized for a residential home in
+        Tucson, Arizona and simulated across a full year of real solar resource data from
+        SAM. The usable roof area was 15 m&sup2; and each Qcells 300 W module covers
+        1.62 m&sup2;, which caps the array at nine modules. We settled on eight in a
+        4-series &times; 2-parallel layout &mdash; 2.4 kW at standard test conditions, and a
+        symmetric string configuration that keeps the array inside the inverter's window:
+        129.6 V at maximum power against a 100 V minimum MPPT threshold, and 158 V open
+        circuit against a 480 V ceiling.
       </p>
 
-      <h2>How it works</h2>
-      <ul>
-        <li>Parse the circuit into a node and branch structure.</li>
-        <li>Build the conductance matrix and source vector for nodal analysis.</li>
-        <li>Solve, then present the derivation as readable steps rather than a single result.</li>
-        <li>TODO &mdash; which element types are supported so far.</li>
-      </ul>
-
-      <h2>Status</h2>
+      <h2>What I owned</h2>
       <p>
-        TODO &mdash; what works today, what's next, and whether it's deployed anywhere someone
-        could try it. A live link here is worth more than a screenshot.
+        This was a five-person project. My part was the electricity pricing and evaluation
+        layer &mdash; the piece that turns a battery schedule into an actual bill. I wrote the
+        MATLAB for the tariff structures (flat rate, current time-of-use, and a three-tier
+        TOU scheme, each with separate summer and winter pricing) and the three cost
+        baselines everything gets measured against:
+      </p>
+      <ul>
+        <li><strong>No PV</strong> &mdash; hourly demand priced straight off the grid at the TOU rate.</li>
+        <li><strong>PV only</strong> &mdash; generation subtracted from demand, with only the shortfall purchased.</li>
+        <li><strong>PV + battery</strong> &mdash; generation and the charge/discharge schedule together, with grid import floored at zero, since this model doesn't sell back.</li>
+      </ul>
+      <p>
+        I also reorganized the results structure so pricing evaluations were stored per
+        season, per tariff, and per forecast model, which is what made the comparison plots
+        possible without rerunning the simulation for every chart.
+      </p>
+
+      <h2>Results</h2>
+      <p>
+        Under the current TOU tariff in summer, a home with no PV ran $39.71 a week. Adding
+        the array brought it to $30.49. Adding the battery brought it to $14.94 &mdash; a
+        far larger drop than the panels alone produced. The reason is timing rather than
+        volume: the battery isn't just reducing grid consumption, it's reducing grid
+        consumption specifically during the 4&ndash;9 pm peak when electricity is most
+        expensive. Midday surplus that would otherwise be curtailed gets stored and spent
+        against the highest rates of the day.
+      </p>
+      <p>
+        Winter followed the same pattern at a smaller magnitude &mdash; $7.27 a week with PV
+        and battery. Interestingly, the cheapest tariff differed by season: flat rate won in
+        summer for the no-PV and PV-only cases, while three-tier TOU was cheapest in winter.
+        A flat rate gives a battery nothing to arbitrage against, so storage stops paying for
+        itself.
+      </p>
+
+      <h2>The result I didn't expect</h2>
+      <p>
+        The team compared three forecasting models &mdash; persistence, three-day moving
+        average, and linear regression &mdash; by mean absolute percentage error. Persistence
+        was the most accurate in summer at 1.45% MAPE, since Tucson skies are consistent
+        enough that yesterday predicts today. Winter wrecked all three: 81.81%, 70.76%, and
+        69.62% respectively.
+      </p>
+      <p>
+        But the most accurate forecast didn't produce the cheapest week. The moving average
+        model had the lowest weekly cost in <em>both</em> seasons despite never having the
+        best MAPE &mdash; $14.85 in summer and $6.07 in winter. Forecast error only matters
+        where it changes a scheduling decision, and a model that's wrong in the right
+        direction can still charge and discharge at the right hours. That gap between
+        prediction accuracy and decision quality was the most useful thing I took from the
+        project.
       </p>
 
       <div class="gallery">
         <figure class="frame" data-fade>
-          <div class="slot"><span class="ph">images/solver-1.png</span><img src="images/solver-1.png" alt="Step output" onerror="this.remove()"></div>
-          <figcaption>Step output</figcaption>
+          <div class="slot"><span class="ph">images/pv-battery-ops.png</span><img src="images/pv-battery-ops.png" alt="Battery state of charge and power flows" onerror="this.remove()"></div>
+          <figcaption>Power flows and state of charge</figcaption>
         </figure>
         <figure class="frame" data-fade>
-          <div class="slot"><span class="ph">images/solver-2.png</span><img src="images/solver-2.png" alt="Netlist input" onerror="this.remove()"></div>
-          <figcaption>Netlist input</figcaption>
+          <div class="slot"><span class="ph">images/pv-mape.png</span><img src="images/pv-mape.png" alt="Forecast MAPE by model" onerror="this.remove()"></div>
+          <figcaption>Forecast MAPE by model</figcaption>
         </figure>
       </div>
     </div>
 
     <aside class="sidebar">
       <dl class="spec">
-        <dt class="mono">Skills</dt>
-        <dd>JavaScript<br>Linear algebra<br>Nodal analysis<br>UI design</dd>
+        <dt class="mono">My contribution</dt>
+        <dd>Pricing &amp; evaluation model<br>TOU tariff structures<br>Cost baseline comparison<br>Results restructuring</dd>
       </dl>
       <dl class="spec">
-        <dt class="mono">Links</dt>
-        <dd>TODO: live demo<br>TODO: repo</dd>
-      </dl>
-      <a class="btn btn-quiet" href="https://github.com/cooperlopis" target="_blank" rel="noopener">Source on GitHub</a>
-    </aside>
-  </div>
-
-  <div class="wrap">
-    <a class="next" href="#/scout">
-      <div><span class="mono">Next project</span><h3>Internship Scout</h3></div>
-      <svg width="34" height="16" viewBox="0 0 16 16"><use href="#i-arrow"/></svg>
-    </a>
-  </div>
-</main>
-
-<!-- ═══════════════════════════════════════════════════════
-     DETAIL — SCOUT
-     ═══════════════════════════════════════════════════════ -->
-<main class="view" id="view-scout">
-  <div class="wrap detail-head">
-    <a class="back" href="#/"><svg width="15" height="15" viewBox="0 0 16 16"><use href="#i-arrow-l"/></svg> All work</a>
-    <h1>Internship Scout</h1>
-    <div class="detail-sub">
-      <span class="mono">Automation</span>
-      <span class="mono">Python</span>
-      <span class="mono">Runs daily</span>
-    </div>
-  </div>
-
-  <div class="wrap detail-body">
-    <div class="prose">
-      <figure class="frame wide" data-fade>
-        <div class="slot"><span class="ph">images/scout.png</span><img src="images/scout.png" alt="Scout output" onerror="this.remove()"></div>
-        <figcaption>Ranked output</figcaption>
-      </figure>
-
-      <h2>Overview</h2>
-      <p>
-        A Python tool that replaces the daily pass through the same four job boards. It runs on
-        a schedule and produces a ranked shortlist, so the only manual step left is deciding
-        whether to apply.
-      </p>
-
-      <h2>Pipeline</h2>
-      <ul>
-        <li>Pull postings from several sources on a schedule.</li>
-        <li>Normalize into one record shape so duplicates across boards collapse.</li>
-        <li>Score each posting against coursework, tools, and past roles.</li>
-        <li>Output the ranked list to a file I check each morning.</li>
-      </ul>
-
-      <h2>Scoring</h2>
-      <p>
-        TODO &mdash; write up the heuristic: how title, description, and required years are
-        weighted, and what you changed after it kept surfacing senior roles. That is the part
-        worth showing.
-      </p>
-
-      <div class="gallery">
-        <figure class="frame" data-fade>
-          <div class="slot"><span class="ph">images/scout-1.png</span><img src="images/scout-1.png" alt="Scoring breakdown" onerror="this.remove()"></div>
-          <figcaption>Scoring breakdown</figcaption>
-        </figure>
-        <figure class="frame" data-fade>
-          <div class="slot"><span class="ph">images/scout-2.png</span><img src="images/scout-2.png" alt="Pipeline" onerror="this.remove()"></div>
-          <figcaption>Pipeline</figcaption>
-        </figure>
-      </div>
-    </div>
-
-    <aside class="sidebar">
-      <dl class="spec">
-        <dt class="mono">Skills</dt>
-        <dd>Python<br>Web scraping<br>Data normalization<br>Scheduling</dd>
+        <dt class="mono">Array</dt>
+        <dd>8 &times; Qcells 300 W<br>4 series &times; 2 parallel<br>2.4 kW DC at STC<br>129.6 V / 158 V Voc</dd>
       </dl>
       <dl class="spec">
-        <dt class="mono">Stack</dt>
-        <dd>TODO: libraries used</dd>
+        <dt class="mono">Tools</dt>
+        <dd>MATLAB<br>NREL SAM<br>CVX</dd>
+      </dl>
+      <dl class="spec">
+        <dt class="mono">Course</dt>
+        <dd>ECEN 2410<br>Renewable Energy Systems<br>CU Boulder</dd>
       </dl>
       <a class="btn btn-quiet" href="https://github.com/cooperlopis" target="_blank" rel="noopener">Source on GitHub</a>
     </aside>
